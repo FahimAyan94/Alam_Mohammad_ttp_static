@@ -5,20 +5,28 @@
 <h1>My name is Mohammad Alam and my favorite hobby is playing guitar.</h1>
 
 <title>TTP</title>
-<script type="text/javascript"> 
+<script>
 
-function display_c(){
-var refresh=1000; // Refresh rate in milli seconds
-mytime=setTimeout('display_ct()',refresh)
-}
-
-function display_ct() {
+function display_ct6() {
 var x = new Date()
-document.getElementById('ct').innerHTML = x;
-display_c();
+hours = x.getHours( ) % 12;
+hours = hours ? hours : 12;
+var x1=x.getMonth() + 1+ "/" + x.getDate() + "/" + x.getFullYear(); 
+x1 = x1 + " - " +  hours + ":" +  x.getMinutes() + ":" +  x.getSeconds();
+document.getElementById('ct6').innerHTML = x1;
+display_c6();
 }
 
+function display_c6(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct6()',refresh)
+}
+
+display_c6()
 </script>
+
+<span id='ct6'></span>
+
 </head>
 
 <body onload=display_ct();>
